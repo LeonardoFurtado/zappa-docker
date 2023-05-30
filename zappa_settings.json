@@ -1,0 +1,17 @@
+{
+    "lambda_docker_flask": {
+        "app_function": "zdf.app.app",
+        "project_name": "test",
+        "s3_bucket": "lambda-docker-flask",
+        "environment_variables": {
+            "EXAMPLE_ENV_VAR": "prod"
+        },
+        "events": [
+            {
+               "function": "zdf.process.run_process",
+               "expression": "cron(0 */2 * * ? *)"
+            }
+        ],
+        "lambda_description": "Zappa + Docker + Flask"
+    }
+}
